@@ -30,6 +30,7 @@ RELATION_DICT_IDX_REL = {
 
 
 def find_tok_idx(sublst, lst, sent_idx, sent_len_dict):
+    """ Based on: https://stackoverflow.com/questions/17870544/find-starting-and-ending-indices-of-sublist-in-list"""
     len_sublst = len(sublst)
 
     for ind in (i for i, e in enumerate(lst) if e == sublst[0]):
@@ -72,7 +73,6 @@ def mturk_labels_to_dygiepp(label_file, out_file):
                     sent_accum_len_dict[i] = current_len
                     current_len += len(s)  # added after, so that we can use it below immediately
 
-                # triples_verbatim = ann_dict['triples_verbatim']
                 triples_ids = ann_dict['triples_ids']
                 sents_ids = ann_dict['sent_ids']
 
